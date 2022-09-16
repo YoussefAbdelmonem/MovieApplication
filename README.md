@@ -10,6 +10,11 @@ The Clen Architecture Pattern That I used
 # Here you can see it Clearly 
 
 ![ce](https://user-images.githubusercontent.com/76841665/190666044-d3ddc738-3808-4ebe-b49b-95f16cff52a1.PNG)
+
+# The Distribution of the prokect
+
+![re](https://user-images.githubusercontent.com/76841665/190668220-625e4094-a3b5-4499-9b36-f2a3a7b3e6da.PNG)
+
  
  
  # I used Bloc State Management in this App 
