@@ -17,7 +17,8 @@ The Clen Architecture Pattern That I used
  ![bloc](https://user-images.githubusercontent.com/76841665/190666402-b95f041e-d165-4722-a128-b933d36ba782.PNG)
 
 
-# The API I used I get it from 
+# The API I get it from 
+
 https://www.themoviedb.org/
 
 # The UI/UX I Applyed 
