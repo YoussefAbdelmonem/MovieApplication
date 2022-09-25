@@ -17,9 +17,3 @@ const  ServerFailure(super.message);
 
 }
 
-class DatabaseFailure extends Failure
-{
-  const  DatabaseFailure(super.message);
-
-
-}

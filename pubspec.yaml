@@ -16,7 +16,6 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
-  bloc:
   flutter_bloc:
   equatable:
   dio:
@@ -24,8 +23,6 @@ dependencies:
   get_it:
   animate_do:
   cached_network_image:
-  google_fonts:
-  shimmer:
   carousel_slider:
 
 
