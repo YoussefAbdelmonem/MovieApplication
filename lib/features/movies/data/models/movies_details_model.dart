@@ -1,8 +1,9 @@
 import 'dart:core';
 
-import 'package:movies_application/features/movies/data/models/geners_model.dart';
 import 'package:movies_application/features/movies/domain/entities/genres.dart';
 import 'package:movies_application/features/movies/domain/entities/movie_details.dart';
+
+import 'geners_model.dart';
 
 class MovieDetailModel extends MovieDetails {
     const MovieDetailModel(

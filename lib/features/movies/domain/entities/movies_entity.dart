@@ -8,7 +8,7 @@ class Movies extends Equatable
   final String overview;
   final String releaseDate;
   final String voteAverage;
-  final List<int> genreIds;
+
 
  const Movies(
       {
@@ -18,11 +18,10 @@ class Movies extends Equatable
         required  this.releaseDate,
         required this.overview,
         required this.voteAverage,
-        required this.genreIds}
+        }
         );
 
   @override
-  // TODO: implement props
   List<Object?> get props =>
       [
         id,
@@ -30,7 +29,6 @@ class Movies extends Equatable
         title,
         overview,
         voteAverage,
-        genreIds,
         releaseDate,
 
       ];

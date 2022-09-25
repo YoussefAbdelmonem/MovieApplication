@@ -9,11 +9,3 @@ class ServerException implements Exception
 
 }
 
-class LocalDataBaseException implements Exception
-{
-  final String message;
-
-  LocalDataBaseException({required this.message});
-
-
-}

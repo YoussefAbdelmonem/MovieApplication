@@ -9,36 +9,42 @@ import 'package:movies_application/features/movies/presentation/controller/movie
 import 'package:movies_application/features/movies/presentation/controller/movies_state.dart';
 import 'package:movies_application/features/movies/presentation/screens/movie_detail_screen.dart';
 
-
 class NowPlayingComponent extends StatelessWidget {
   const NowPlayingComponent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<MoviesController,MoviesState>(
-     buildWhen:(previous, current)=>previous.nowPlyingState != current.nowPlyingState , builder: (context,state)
-      {
+    return BlocBuilder<MoviesController, MoviesState>(
+      buildWhen: (previous, current) =>
+          previous.nowPlyingState != current.nowPlyingState,
+      builder: (context, state) {
         print(state);
-        switch(state.nowPlyingState){
+        switch (state.nowPlyingState) {
           case RequestState.loading:
-               return  Container(height:400,child: Center(child: CircularProgressIndicator()));
+            return  Container(
+                height: 400, child: Center(child: CircularProgressIndicator()));
           case RequestState.loaded:
-               return FadeIn(
+            return FadeIn(
               duration: const Duration(milliseconds: 500),
               child: CarouselSlider(
+
                 options: CarouselOptions(
-                  height: 400.0,
+                  scrollDirection: Axis.horizontal,
+                  height: 500.0,
                   viewportFraction: 1.0,
-                  onPageChanged: (index, reason) {},
                 ),
                 items: state.nowPlayingMovies.map(
-                      (item) {
+                  (item) {
+                    /// replacement of INKWELL
                     return GestureDetector(
-                      key: const Key('openMovieMinimalDetail'),
-                      onTap: ()
-                      {
-                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) { return MovieDetailScreen(id: item.id,);}));
 
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return MovieDetailScreen(
+                            id: item.id,
+                          );
+                        }));
                       },
                       child: Stack(
                         children: [
@@ -61,8 +67,9 @@ class NowPlayingComponent extends StatelessWidget {
                             },
                             blendMode: BlendMode.dstIn,
                             child: CachedNetworkImage(
-                              height: 560.0,
-                              imageUrl: ApiConstance.imageUrl(item.backdropPath),
+                              height: 500.0,
+                              imageUrl:
+                                  ApiConstance.imageUrl(item.backdropPath),
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -86,8 +93,7 @@ class NowPlayingComponent extends StatelessWidget {
                                         'Now Playing'.toUpperCase(),
                                         style: const TextStyle(
                                             fontSize: 16.0,
-                                            color: Colors.white
-                                        ),
+                                            color: Colors.white),
                                       ),
                                     ],
                                   ),
@@ -98,9 +104,7 @@ class NowPlayingComponent extends StatelessWidget {
                                     item.title,
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
-                                        fontSize: 24,
-                                        color: Colors.white
-                                    ),
+                                        fontSize: 24, color: Colors.white),
                                   ),
                                 ),
                               ],
@@ -114,11 +118,9 @@ class NowPlayingComponent extends StatelessWidget {
               ),
             );
           case RequestState.error:
-             return  Center(child:Text(state.nowPlayingMessage));
-
-}
+            return Center(child: Text(state.nowPlayingMessage));
+        }
       },
-
     );
   }
 }
